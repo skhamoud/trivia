@@ -1,7 +1,9 @@
-import Button from "components/atoms/button";
 import { useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import QuestionCard from "../components/question-card";
+import QuestionNotFound from "../components/question-not-found";
 import useQuizStore, { Answer } from "../store";
+import styles from "./quiz.module.css";
 
 export default function Quiz() {
   const { question: id } = useParams<{ question: string }>();
@@ -9,29 +11,24 @@ export default function Quiz() {
   const question = useQuizStore((state) => state.questions[id]);
   const setAnswer = useQuizStore(useCallback((state) => state.setAnswer, []));
 
+  const handleAnswer = useCallback(
+    (answer: Answer) => {
+      setAnswer(answer, id);
+      navigate(`/quiz/${Number(id) + 1}`);
+    },
+    [id, setAnswer, navigate]
+  );
+
   if (!question) {
-    return <h3>Loading...</h3>;
+    return <QuestionNotFound />;
   }
   return (
-    <main className="flex flex-col justify-start items-center p-4 lg:p16 text-center lg:text-left min-h-screen ">
-      <h1 className="text-4xl text-bold mb-20" key={question?.id}>
+    <main className={styles.container}>
+      <h1 className={styles.header} key={question?.id}>
         {question?.category}
       </h1>
       <section>
-        <div className="max-w-xs p-4 shadow-md ">{question.question}</div>
-      </section>
-      <section>
-        <div className="flex justify-center space-x-2 mt-10 ">
-          <Button
-            onClick={() => {
-              setAnswer(Answer.true, question.id);
-              navigate(`/quiz/${Number(id) + 1}`);
-            }}
-          >
-            True
-          </Button>
-          <Button>False</Button>
-        </div>
+        <QuestionCard question={question.question} onAnswer={handleAnswer} />
       </section>
     </main>
   );
