@@ -1,6 +1,6 @@
 {
-  "short_name": "Trivial app",
-  "name": "Trivial app",
+  "short_name": "Trivia app",
+  "name": "Trivia app",
   "icons": [
     {
       "src": "favicon.svg",

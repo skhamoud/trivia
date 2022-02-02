@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "features/quiz/views/welcome";
-import Quiz from "features/quiz/views/quiz";
-import Results from "features/quiz/views/results";
+import Home from "features/quiz/pages/welcome";
+import Quiz from "features/quiz/pages/quiz";
+import Results from "features/quiz/pages/results";
 
 const routes = () => {
   return (

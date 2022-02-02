@@ -1,7 +1,7 @@
 {
-  "name": "trivial-app",
+  "name": "trivia-app",
   "version": "1.0.0",
-  "description": "Trivial app React test",
+  "description": "Trivia app React test",
   "author": "Hamoud",
   "license": "MIT",
   "keywords": [
