@@ -10,6 +10,7 @@ export default defineConfig((configEnv) => {
     resolve: {
       alias: {
         app: resolve(__dirname, "src", "app"),
+        features: resolve(__dirname, "src", "features"),
         components: resolve(__dirname, "src", "components"),
         hooks: resolve(__dirname, "src", "hooks"),
       },
