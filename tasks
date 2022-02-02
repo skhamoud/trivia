@@ -1,13 +1,13 @@
 [x] - Setup routing 
 [x] - Setup folder structure
 [x] - Home page
-[ ] - quiz page
+[x] - quiz page
 	[x] figure out which type of state to use and plug it up
 	[x] pull in the data
-	[ ] abstract away data fetching with axios and hooks
+	[x] abstract away data fetching with api service and hooks
 	[x] UI of each quiz
 	[x] tabulate each question after answer
-	[ ] refactor and cater to landing on random page 
+	[x] refactor and cater to landing on random quiz page 
 [ ] - results page
 	[ ] stop quiz at last one and navigate to results
 	[ ] pull results from store

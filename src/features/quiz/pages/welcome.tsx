@@ -1,25 +1,9 @@
 import { ButtonLink } from "components/atoms/button";
-import { useCallback, useEffect } from "react";
-import useQuizStore from "../store";
+import useGetQuestions from "../hooks/use-get-questions";
 import styles from "./welcome.module.css";
 
 export default function Home() {
-  const setQuestions = useQuizStore(
-    useCallback((state) => state.setQuestions, [])
-  );
-
-  useEffect(() => {
-    fetchQuestions();
-    async function fetchQuestions() {
-      const res = await fetch(
-        "https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean"
-      );
-      const data = await res.json();
-      if (data?.results) {
-        setQuestions(data.results);
-      }
-    }
-  }, [setQuestions]);
+  useGetQuestions();
 
   return (
     <main className={styles.page}>

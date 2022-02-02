@@ -1,4 +1,5 @@
 import create from "zustand";
+import { GetQuestionsResponse } from "./data/quiz.api";
 
 export enum Answer {
   true = "True",
@@ -22,7 +23,7 @@ type Answers = {
 export type QuizState = {
   questions: Questions;
   answers: Answers;
-  setQuestions: (questions: Question[]) => void;
+  setQuestions: (questions: GetQuestionsResponse["results"]) => void;
   setAnswer: (answer: Answer, questionId: string) => void;
 };
 
