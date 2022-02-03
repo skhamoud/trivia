@@ -8,8 +8,10 @@
 	[x] UI of each quiz
 	[x] tabulate each question after answer
 	[x] refactor and cater to landing on random quiz page 
-[ ] - results page
+	[x] handle html codes in questions	
+	[ ] show current question
 	[ ] stop quiz at last one and navigate to results
+[ ] - results page
 	[ ] pull results from store
 	[ ] UI of results page
 	[ ] Replay

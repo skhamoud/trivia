@@ -4,12 +4,8 @@
     "es2021": true
   },
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
-  "extends": [
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended"
-  ],
+  "plugins": ["@typescript-eslint", "risxss"],
+  "extends": ["plugin:@typescript-eslint/recommended", "plugin:react/recommended", "plugin:react-hooks/recommended"],
   "rules": {
     "@typescript-eslint/ban-ts-comment": "warn",
     "comma-dangle": "off",
@@ -19,6 +15,7 @@
     "react/prop-types": "off",
     "react/no-unescaped-entities": "off",
     "react/display-name": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "risxss/catch-potential-xss-react": "error"
   }
 }

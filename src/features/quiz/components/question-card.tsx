@@ -1,4 +1,5 @@
 import Button from "components/atoms/button";
+import HtmlMessage from "components/molecules/html-message";
 import { Answer } from "../store";
 
 type Props = {
@@ -9,7 +10,7 @@ type Props = {
 function QuestionCard({ question, onAnswer }: Props) {
   return (
     <div className="max-w-xs p-4 shadow-md rounded-md">
-      <div>{question}</div>
+      <HtmlMessage htmlText={question} />
       <div className="flex justify-center space-x-2 mt-10 ">
         <Button
           onClick={() => {
