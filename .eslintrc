@@ -5,7 +5,11 @@
   },
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint", "risxss"],
-  "extends": ["plugin:@typescript-eslint/recommended", "plugin:react/recommended", "plugin:react-hooks/recommended"],
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
+  ],
   "rules": {
     "@typescript-eslint/ban-ts-comment": "warn",
     "comma-dangle": "off",

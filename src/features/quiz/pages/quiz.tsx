@@ -5,18 +5,23 @@ import QuestionNotFound from "../components/question-not-found";
 import useQuizStore, { Answer } from "../store";
 import styles from "./quiz.module.css";
 
-export default function Quiz() {
+export default function QuizQuestion() {
   const { question: id } = useParams<{ question: string }>();
   const navigate = useNavigate();
-  const question = useQuizStore((state) => state.questions[id]);
+  const [question, currentQuestion, count] = useQuizStore((state) => [
+    state.questions[id],
+    state.current,
+    state.count,
+  ]);
   const setAnswer = useQuizStore(useCallback((state) => state.setAnswer, []));
 
   const handleAnswer = useCallback(
     (answer: Answer) => {
       setAnswer(answer, id);
-      navigate(`/quiz/${Number(id) + 1}`);
+      if (currentQuestion < count) navigate(`/quiz/${currentQuestion + 1}`);
+      else navigate("/results");
     },
-    [id, setAnswer, navigate]
+    [id, currentQuestion, count, setAnswer, navigate]
   );
 
   if (!question) {
@@ -29,6 +34,9 @@ export default function Quiz() {
       </h1>
       <section>
         <QuestionCard question={question.question} onAnswer={handleAnswer} />
+        <div className="mt-4">
+          {currentQuestion} out of {count}
+        </div>
       </section>
     </main>
   );
