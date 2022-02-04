@@ -3,7 +3,8 @@
 ## Running
 
 - `yarn start` to run the dev server
-- `yarn test` for testing
+- `yarn test:e2e` for end to end tests with cypress
+- `yarn test` for unit tests
 - `yarn build` for building
 
 ## Folder structure

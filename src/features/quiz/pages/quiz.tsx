@@ -37,8 +37,12 @@ export default function QuizQuestion() {
   }
 
   return (
-    <main className={styles.container}>
-      <h1 className={styles.header} key={question?.id}>
+    <main className={styles.container} data-testid="question">
+      <h1
+        className={styles.header}
+        key={question?.id}
+        data-testid="question-category"
+      >
         {question?.category}
       </h1>
       <section>
