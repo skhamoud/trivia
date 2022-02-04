@@ -3,5 +3,5 @@
 }
 
 .header {
-  @apply text-2xl font-bold mb-20;
+  @apply text-2xl font-bold my-20;
 }

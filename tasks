@@ -11,8 +11,11 @@
 	[x] handle html codes in questions	
 	[x] show current question
 	[x] stop quiz at last one and navigate to results
-[ ] - results page
-	[ ] pull results from store
-	[ ] UI of results page
-	[ ] Replay
+[x] - results page
+	[x] pull results from store
+	[x] UI of results page
+	[x] Replay feature
+[x] - Not found question handling
+[x] - 404 page
+
 	

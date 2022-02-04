@@ -25,21 +25,29 @@ export type QuizState = {
   answers: Answers;
   count: number;
   current: number;
+  fetched: boolean;
   setQuestions: (questions: GetQuestionsResponse["results"]) => void;
   setAnswer: (answer: Answer, questionId: string) => void;
+  reset: () => void;
+};
+
+const initialState = {
+  fetched: false,
+  count: 0,
+  current: 0,
+  questions: {},
+  answers: {},
 };
 
 const useQuizStore = create<QuizState>((set) => ({
-  questions: {},
-  count: 0,
-  current: 0,
-  answers: {},
+  ...initialState,
   setQuestions(questions) {
     const normalizedQuestions = questions.reduce(
       (acc, q, idx) => ({ ...acc, [idx + 1]: q }),
       {}
     );
     set(() => ({
+      fetched: true,
       questions: normalizedQuestions,
       count: questions.length,
       current: 1,
@@ -50,6 +58,9 @@ const useQuizStore = create<QuizState>((set) => ({
       answers: { ...state.answers, [id]: answer },
       current: state.current + 1,
     }));
+  },
+  reset() {
+    set(() => initialState);
   },
 }));
 

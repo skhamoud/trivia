@@ -1,0 +1,18 @@
+.container {
+  @apply relative flex flex-col justify-start items-center p-4 lg:p-16 text-center lg:text-left min-h-screen;
+}
+
+.header {
+  @apply text-4xl text-center font-bold mb-10;
+}
+
+.results_list_section {
+  @apply overflow-hidden overflow-y-auto px-10 mb-10;
+  height: 70vh;
+}
+.results_list {
+  @apply list-none p-0 m-0;
+}
+.cta {
+  @apply absolute bottom-6;
+}
