@@ -36,7 +36,7 @@ describe("Happy path", () => {
     });
 
     it("restarts the game on replay", () => {
-      cy.findByRole("link", { name: /replay/i }).click();
+      cy.findByRole("link", { name: /play again/i }).click();
       cy.findByText(/Welcome/).should("be.visible");
       cy.findByRole("link", { name: /begin/i }).should("exist");
     });

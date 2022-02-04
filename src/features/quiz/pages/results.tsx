@@ -33,7 +33,7 @@ export default function Results() {
         </ul>
       </section>
       <div className={styles.cta}>
-        <ButtonLink to="/">Replay</ButtonLink>
+        <ButtonLink to="/">PLAY AGAIN?</ButtonLink>
       </div>
     </main>
   );
