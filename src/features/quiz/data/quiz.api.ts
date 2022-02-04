@@ -17,9 +17,8 @@ export default {
     const res = await fetch(
       `${baseUrl}?amount=${amount}&difficulty=hard&type=boolean`
     );
-    if (res.ok) {
-      return await res.json();
-    }
+    if (res.ok) return await res.json();
+    else throw new Error(res.statusText || "Error fetching questions");
   },
   // other api calls ...
 };

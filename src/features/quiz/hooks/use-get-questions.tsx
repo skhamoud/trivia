@@ -55,7 +55,7 @@ export default function useGetQuestions(
           setError(errMsg);
         }
       } catch (err) {
-        setError(errMsg);
+        setError(err);
       } finally {
         setShouldFetch(false);
         setLoading(false);
