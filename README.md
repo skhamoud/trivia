@@ -1,5 +1,7 @@
 # Trivia app
 
+Trivia app coding challenge was a take home assignment in an interview for a contractor network vetting process. took opportunity to pick up zustand state in the process :)
+
 ## Running
 
 - `yarn start` to run the dev server
